@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="windows-1251">
+        <meta name="product" content="Рейтинг студентов ВГУИТ (бывш. ВГТА, ВТИ)">
+        <meta name="description" content="Рейтинг студентов ВГУИТ (бывш. ВГТА, ВТИ)">
+
+        <link rel="stylesheet" href="css/metro-bootstrap.css">
+        <link rel="stylesheet" href="css/common.css">
+        <script type="text/javascript" src="js/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery/jquery.widget.min.js"></script>
+        <script type="text/javascript" src="js/load-metro.js"></script>
+        <!--<script type="text/javascript" src="js/login.js"></script>-->
+    </head>
+    <body class="metro">
+    <!--info-->
+    <div id="info" class="grid no-margin">
+        <div class="row">
+            <small>Вы вошли как гость. Для использования доп. возможностей необходима</small>
+            <a id="close-info" href="#" class="icon-cancel place-right fg-hover-grayLight" title="Закрыть"></a>
+        </div>
+    </div><!--/info-->
+    <!--header-bar-->
+    <nav id="header-bar" class="navigation-bar dark">
+        <nav class="navigation-bar-content">
+            <a id="logo" href="/" class="element" title="Главная страница"></a>
+            <div id="search" class="element place-right">
+                <div class="input-control text size4">
+                    <input type="text" placeholder="Поиск..." />
+                    <button class="btn-search bg-grayDarker fg-grayLight"></button>
+                </div>
+            </div>
+        </nav>
+    </nav><!--/header-bar-->
+    <!--header-->
+    <nav id="header" class="horizontal-menu">
+        <ul>
+            <li class="place-right">
+                <a href="#" class="number">3</a>
+                <a href="#" class="element">&nbsp;Просмотр</a>
+            </li>
+            <li class="place-right">
+                <a href="#" class="number">2</a>
+                <a href="#" class="element">&nbsp;Выбор группы</a>
+            </li>
+            <li class="place-right active">
+                <a href="#" class="number">1</a>
+                <a href="#" class="element">&nbsp;Выбор факультета</a>
+            </li>
+        </ul>
+    </nav><!--/header-->
+    <!--select-->
+    <form method="get" action="/" class="no-margin">
+        <div id="select" class="grid">
+            <div class="row">
+                <div class="span7">
+                    <h3>Выберите факультет:</h3>
+                    <div class="input-control select size7">
+                        <select id="faculties">
+                            <option value="0" selected="selected">Выберите ваш факультет</option>
+                            <?php foreach ($faculties as $faculty): ?>
+                            <option value="<?php echo $faculty->id; ?>">
+                                <?php echo $faculty->name; ?>
+                            </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
+                <div id="select-group" class="span2 place-right disabled">
+                    <h3>Группа:</h3>
+                    <div class="input-control select size2">
+                        <select id="groups" disabled></select>
+                    </div></div>
+                <div class="span1 place-right disabled" style="padding: 40px 0 0 40px;">
+                    <button class="inverse" style="border-color: #555555;">Просмотр</button>
+                </div>
+            </div>
+        </div>
+    </form><!--/select-->
+    <!--wrapper-->
+    <div id="wrapper" class="grid">
+
+        <div id="nav" class="row">
+            <div class="span7 padding10">
+                <h2>Просмотр</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="span11">
+                <div id="group-data" class="tab-control" data-role="tab-control">
+                    <ul class="tabs">
+                        <li class="active"><a href="#_rating_all">
+                            <i class="icon-stats"></i>&nbsp;Общедисциплинарный</a>
+                        </li>
+                        <li><a href="#_rating_disciplines">
+                            <i class="icon-equalizer"></i>&nbsp;По дисциплинам</a>
+                        </li>
+                        <li><a href="#_rating_history">
+                            <i class="icon-history"></i>&nbsp;История обновлений</a>
+                        </li>
+                        <li class="place-right"><a href="#_page_4"><i class="icon-cog"></i></a></li>
+                    </ul>
+                    <div class="frames bg-black">
+
+                        <div class="frame" id="_rating_all">
+                            <p>Ниже в таблице приведены данные рейтинга. Текущий рейтинг студента указан в столбце
+                            <strong>Тек. рейтинг</strong>. Справа от него - значения рейтинга за предыдущие дни.
+                            Для прокуртки воспользуйтесь колесиком мыши.</p>
+
+                            <div id="rating" class="row">
+                                <div class="span4">
+                                    <table id="students-list" class="table rating-table hovered striped">
+                                        <tbody>
+                                        <tr>
+                                            <th width="1%">№</th>
+                                            <th class="text-left" width="64%">Имя студента</th>
+                                            <th width="35%">Тек. рейтинг</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">1</td>
+                                            <td>Аксенов А.А.</td>
+                                            <td class="text-right">50,90&nbsp;
+                                                <span class="fg-lightGreen">+1</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">1</td>
+                                            <td>Аксенов А.А.</td>
+                                            <td class="text-right">50,90&nbsp;
+                                                <span class="fg-lightGreen">+1</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">1</td>
+                                            <td>Аксенов А.А.</td>
+                                            <td class="text-right">50,90&nbsp;
+                                                <span class="fg-lightGreen">+1</span>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div id="rating-values" class="span6">
+                                    <table class="table rating-table hovered striped">
+                                        <tbody>
+                                        <tr>
+                                            <th width="10%">03.01.2014</th>
+                                            <th width="10%">03.01.2014</th>
+                                            <th width="10%">03.01.2014</th>
+                                            <th width="10%">03.01.2014</th>
+                                            <th width="10%">03.01.2014</th>
+
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right">50,90&nbsp;
+                                                <span class="fg-lightGreen">+1</span>
+                                            </td>
+                                            <td class="text-right">50,90&nbsp;
+                                                <span class="fg-lightGreen">+1</span>
+                                            </td>
+                                            <td class="text-right">50,90&nbsp;
+                                                <span class="fg-lightGreen">+1</span>
+                                            </td>
+                                            <td class="text-right">50,90&nbsp;
+                                                <span class="fg-lightGreen">+1</span>
+                                            </td>
+                                            <td class="text-right">50,90&nbsp;
+                                                <span class="fg-lightGreen">+1</span>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right">50,90&nbsp;
+                                                <span class="fg-lightGreen">+1</span>
+                                            </td>
+                                            <td class="text-right">50,90&nbsp;
+                                                <span class="fg-lightGreen">+1</span>
+                                            </td>
+                                            <td class="text-right">50,90&nbsp;
+                                                <span class="fg-lightGreen">+1</span>
+                                            </td>
+                                            <td class="text-right">50,90&nbsp;
+                                                <span class="fg-lightGreen">+1</span>
+                                            </td>
+                                            <td class="text-right">50,90&nbsp;
+                                                <span class="fg-lightGreen">+1</span>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right">50,90&nbsp;
+                                                <span class="fg-lightGreen">+1</span>
+                                            </td>
+                                            <td class="text-right">50,90&nbsp;
+                                                <span class="fg-lightGreen">+1</span>
+                                            </td>
+                                            <td class="text-right">50,90&nbsp;
+                                                <span class="fg-lightGreen">+1</span>
+                                            </td>
+                                            <td class="text-right">50,90&nbsp;
+                                                <span class="fg-lightGreen">+1</span>
+                                            </td>
+                                            <td class="text-right">50,90&nbsp;
+                                                <span class="fg-lightGreen">+1</span>
+                                            </td>
+
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="frame" id="_rating_disciplines">...</div>
+                        <div class="frame" id="_rating_history">...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="signup" class="row bg-white padding10">
+            <div class="span10">
+                <form method="post" action="/">
+                    <legend>Регистрация</legend>
+                    <div class="row">
+                        <div class="span5">
+                            <label for="username">Имя пользователя:</label>
+                            <div class="input-control text size5">
+                                <input id="username" type="text" value="" placeholder="input text"/>
+                                <button class="btn-clear"></button>
+                            </div>
+                            <label for="password">Пароль:</label>
+                            <div class="input-control password size5">
+                                <input id="password" type="password" value="" placeholder="input password"/>
+                                <button class="btn-reveal"></button>
+                            </div>
+                            <label for="enter-password">Подтвердите пароль:</label>
+                            <div class="input-control password size5">
+                                <input id="enter-password" type="password" value="" placeholder="input password"/>
+                                <button class="btn-reveal"></button>
+                            </div>
+                        </div>
+                        <div class="span5">Войти с помощью:
+                            </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div><!--/wrapper-->
+    <div id="footer" class="row padding5">
+        <div class="span5">
+            <address>
+                <strong>Воронежский государственный	университет<br /> инженерных технологий</strong><br />
+                394036 Россия, г. Воронеж<br>
+                пр. Революции, д. 19;<br>
+                <abbr title="Телефон">тел:</abbr> +7 (473) 255-42-67
+            </address>
+        </div>
+    </div>
+
+    <nav id="admin-bar" class="sidebar" style="display: none; width: 190px; position: fixed; top: 0; left: 0;">
+        <ul>
+            <li class="title">Рейтинг</li>
+            <li class="active"><a href="#"><i class="icon-home"></i>Главная</a></li>
+            <li><a href="#"><i class="icon-cog"></i>Настройки</a></li>
+            <li><a href="#"><i class="icon-history"></i>История</a></li>
+            <li><a href="#"><i class="icon-user-3"></i>Пользователи</a></li>
+            <li class="title">Статистика</li>
+            <li><a href="#">Все факультеты</a></li>
+            <li><a href="#">Все группы</a></li>
+            <li><a href="#">Все предметы</a></li>
+        </ul>
+    </nav>
+
+    <script type="text/javascript">
+        /**$('#close-info').on('click', function (){
+            $('#info').slideUp('slow', function(){
+                this.remove();
+            });
+        });**/
+
+        $(document).bind('keypress', function(e)
+        {
+            var code = e.keyCode;
+            if(code==96 || code==1025 || code==1105 || code==126)
+            {
+                $('#admin-bar').fadeToggle('slow');
+            }
+        });
+    </script>
+
+    </body>
+</html>

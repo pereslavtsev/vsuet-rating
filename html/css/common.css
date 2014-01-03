@@ -1,0 +1,240 @@
+body {
+    background: #1d2122;
+    color: #ffffff;
+}
+
+.metro .grid {
+    margin-bottom: 0;
+}
+
+.metro p {
+    font-size: 10pt;
+    color: #fdfdfd;
+}
+
+.metro #nav h2 {
+    font-family: 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    color: #fcd800;
+}
+
+#wrapper {
+    background: transparent url("../images/bg-main.png") no-repeat center;
+}
+
+#header-bar {
+    background: #000000;
+    border-bottom: 1px solid #3b3b3b;
+    height: 50px;
+}
+
+#wrapper .row, #header ul,
+#header-bar .navigation-bar-content,
+#select .row, #info .row,
+#footer {
+    width: 860px;
+    margin: 0 auto 0 auto;
+}
+
+#footer {
+    font-size: 8pt;
+    margin-top: 50px;
+}
+
+#logo {
+    background: transparent url("../images/logo.png") no-repeat center center;
+    margin-top: 3px;
+    width: 290px;
+}
+
+#header {
+    background: transparent url("../images/bg-header.png") no-repeat center bottom;
+    border-bottom: 1px solid #3b3b3b;
+}
+
+#header ul {
+    height: 55px;
+}
+
+#header li a {
+    font-family: 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #777777;
+}
+
+#header li.active a {
+    color: #f6f7f8;
+}
+
+#header li.active a.number {
+    color: #fcd800;
+}
+
+#header li {
+    margin: 0;
+    height: 55px;
+    padding: 12px 7px 0 7px;
+}
+
+#header li:hover {
+    background-color: #555555;
+}
+
+#select {
+    background-image: url("../images/bg-select.png");
+    padding-top: 3px;
+}
+
+#select h3 {
+    font-family: 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #f6f7f8;
+}
+
+#search input,
+#select select {
+    background-color: #000000;
+    border-color: #555555;
+    color: #f6f7f8;
+}
+
+#select {
+    height: 90px;
+}
+
+#select select {
+    padding: 3px;
+}
+
+#select-group {
+    padding-left: 25px;
+}
+
+#select-group.disabled h3 {
+    color: #5c5c5c;
+}
+
+/** Info **/
+#info {
+    background: #f0a30a url("../images/bg-info.png") repeat-x;
+    height: 26px;
+    color: #000000;
+    padding-top: 2px;
+}
+
+#info a {
+    padding-top: 4px;
+    color: #000000;
+}
+
+/** Tabs **/
+.metro #group-data.tab-control .frames {
+    border-color: #555555;
+}
+
+.metro .tab-control .tabs > li {
+    background-color: transparent;
+}
+
+.metro .tab-control .tabs > li a {
+
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+    background-color: #000000;
+    border-color: #5c5c5c;
+    color: #ffffff;
+    padding: 3px 7px;
+    margin-top: 2px;
+}
+
+.metro .tab-control .tabs > li.active a {
+    border-top-color: #f3b40a;
+    border-bottom-color: transparent;
+    background-color: #5c5c5c;
+    font-size: 10pt;
+    margin-top: 0;
+}
+
+.metro .tab-control .tabs > li a i {
+    display: none;
+}
+
+.metro .tab-control .tabs > li.active a i {
+    display: inline;
+}
+
+.metro .tab-control .tabs > li:hover a {
+    background-color: #d5d5d5;
+    color: #1d1d1d;
+}
+
+.metro .tab-control .tabs > li.active:hover a {
+    background-color: #5c5c5c;
+    color: #ffffff;
+}
+
+.metro .window {
+    border: 8px #fcd800 solid;
+    color: #000000;
+}
+.metro .window .caption {
+    background-color: #fcd800;
+    border-top: 8px #fcd800 solid;
+}
+
+/******************/
+#signup {
+    margin-top: 40px;
+    color: #000000;
+}
+
+/**********/
+
+.metro table.rating-table {
+    max-width: 100%;
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    background-color: #000000;
+    border-collapse: separate;
+    border-spacing: 1px;
+}
+
+.metro .rating-table.table th,
+.metro .rating-table.table td {
+    padding: 3px 8px 3px 8px;
+    border: none;
+    font-size: 10pt;
+}
+
+.rating-table.table.striped tbody tr:nth-child(even) {
+    background: #000000;
+}
+
+.rating-table.table.striped tbody tr:nth-child(odd) {
+    background-color: #5c5c5c;
+}
+
+.metro .rating-table.table.hovered tbody tr:hover {
+    background-color: #1e7cc4;
+}
+
+.rating-table th {
+    background-color: #5c5c5c;
+    font-weight: 300;
+}
+
+#rating-values {
+    margin-left: 5px;
+}
+
+.metro .scrollbar-h,
+.metro .scrollbar-h-up,
+.metro .scrollbar-h-down,
+.metro .scrollbar-line-h-btn {
+    background-color: #aaaaaa;
+}
+
+.metro .scrollbar-line-h {
+    background-color: #555555;
+}
